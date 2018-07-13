@@ -41,8 +41,8 @@ bot.on('message', function (user, userID, channelID, message, evt) {
             case 'goose':
                 bot.send('Here is Mr.goose', {
                     files: [{
-                        attachment: "/Users/John/Documents/Feridun Bot/retardgoose.png",
-                        name: 'retardgoose.png'
+                        attachment: "../goose.png",
+                        name: 'goose.png'
                     }]
                 })
                 .then(console.log)
