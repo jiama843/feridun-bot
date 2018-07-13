@@ -1,0 +1,11 @@
+{
+  "name": "feridun-bot",
+  "version": "1.0.0",
+  "description": "The official Waterloo Discord meme bot",
+  "main": "bot.js",
+  "author": "The-John-Ma",
+  "dependencies": {
+    "discord.io": "github:woor/discord.io#gateway_v6",
+    "winston": "^3.0.0"
+  }
+}
