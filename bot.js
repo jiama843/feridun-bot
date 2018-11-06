@@ -42,14 +42,19 @@ bot.on('message', function (user, userID, channelID, message, evt) {
             break;
             // Just add any case commands if you want to..
             case 'goose':
-                bot.send('Here is Mr.goose', {
+                /*bot.send('Here is Mr.goose', {
                     files: [{
                         attachment: "../goose.png",
                         name: 'goose.png'
                     }]
-                })
-                .then(console.log)
-                .catch(console.error);
+                })*/
+                bot.uploadFile({
+                    to: channelID,
+                    file: "goose.png",
+                    message: "HONK HONK!",
+                });
+                //.then(console.log)
+                //.catch(console.error);
             break;
          }
      }
