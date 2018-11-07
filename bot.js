@@ -1,3 +1,5 @@
+var http = require('http');
+var request = require("request")
 var Discord = require('discord.js');
 var RichEmbed = Discord.RichEmbed;
 
@@ -16,6 +18,10 @@ logger.level = 'debug';
    token: auth.token,
    autorun: true
 });*/
+
+// Helpers
+
+
 
 var bot = new Discord.Client();
 
@@ -37,7 +43,8 @@ bot.on('message', message => {
             case 'help':
                 var embed = new RichEmbed()
                 .setColor(0xFFFF00)
-                .setTitle('$399,999 :money_with_wings: ');
+                .setTitle('List of Commands')
+                .setDescription('!goose\n!salary\n!rwaterloo\n!plagarism');
                 message.channel.send(embed);
             break;
 
@@ -68,11 +75,32 @@ bot.on('message', message => {
                 message.channel.send(embed);
             break;
 
-            case 'salary':
-                var embed = new RichEmbed()
-                .setColor(0xFFFF00)
-                .setTitle('$399,999 :money_with_wings: ');
-                message.channel.send(embed);
+            case 'rwaterloo':
+            
+                //var title = '';
+                //var link = '';
+
+                request({
+                    url: "http://www.reddit.com/r/uwaterloo/.json",
+                    json: true
+                }, function (error, response, body) {
+                
+                    if (!error && response.statusCode === 200) {
+                        var index = Math.floor(Math.random() * body.data.children.length);
+                        //console.log(index);
+                        var title = body.data.children[index].data.title;
+                        //console.log(title);
+                        var link = body.data.children[index].data.url;
+                        //console.log(link);
+                        
+                        var embed = new RichEmbed()
+                        .setColor(0xFFFF00)
+                        .setTitle(title)
+                        .setDescription(link);
+                        message.channel.send(embed);
+                    }
+                });
+
             break;
 
             case 'plagarism':

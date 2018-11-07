@@ -19,6 +19,7 @@ Useful discord bot
 
 ```npm -install discord.js```
 ```npm -install winston.js```
+```npm -install request```
 
 3. Run the following:
 
