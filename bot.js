@@ -34,11 +34,18 @@ bot.on('message', message => {
         console.log(cmd);
 
         switch(cmd) {
+            case 'help':
+                var embed = new RichEmbed()
+                .setColor(0xFFFF00)
+                .setTitle('$399,999 :money_with_wings: ');
+                message.channel.send(embed);
+            break;
+
             // !ping
             case 'ping':
                 var embed = new RichEmbed()
                 .setColor(0xFFFF00)
-                .setDescription('pong');
+                .setDescription('pong :ping_pong: :ok_hand: ');
                 message.channel.send(embed);
             break;
             case 'goose':
@@ -51,6 +58,20 @@ bot.on('message', message => {
                 .setTitle('HONK HONK!')
                 .setImage(imgs[Math.floor(Math.random() * imgs.length)]);
                 //.attachFile("goose.png");
+                message.channel.send(embed);
+            break;
+
+            case 'salary':
+                var embed = new RichEmbed()
+                .setColor(0xFFFF00)
+                .setTitle('$399,999 :money_with_wings: ');
+                message.channel.send(embed);
+            break;
+
+            case 'salary':
+                var embed = new RichEmbed()
+                .setColor(0xFFFF00)
+                .setTitle('$399,999 :money_with_wings: ');
                 message.channel.send(embed);
             break;
 
