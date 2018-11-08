@@ -6,7 +6,7 @@ var RichEmbed = Discord.RichEmbed;
 var Guild = Discord.Guild;
 
 var logger = require('winston');
-var auth = require('./auth.json');
+//var auth = require('./auth.json');
 
 // Configure logger settings
 logger.remove(new logger.transports.Console());
