@@ -1,7 +1,9 @@
 var http = require('http');
-var request = require("request")
+var request = require("request");
+
 var Discord = require('discord.js');
 var RichEmbed = Discord.RichEmbed;
+var Guild = Discord.Guild;
 
 var logger = require('winston');
 var auth = require('./auth.json');
@@ -34,17 +36,19 @@ bot.on('ready', function (evt) {
 bot.on('message', message => {
     if (message.content[0] == '!') {
         var args = message.content.split('!');
-        var cmd = args[1];
+        var cmd = args[1].split(' ')[0];
+        var user = args[1].split(' ')[1];
 
         console.log(args);
         console.log(cmd);
+        console.log(user);
 
         switch(cmd) {
             case 'help':
                 var embed = new RichEmbed()
                 .setColor(0xFFFF00)
                 .setTitle('List of Commands')
-                .setDescription('!goose\n!salary\n!rwaterloo\n!plagarism');
+                .setDescription('!goose\n!salary\n!rwaterloo\n!plagarism\n!goosify @user');
                 message.channel.send(embed);
             break;
 
@@ -55,6 +59,7 @@ bot.on('message', message => {
                 .setDescription('pong :ping_pong: :ok_hand: ');
                 message.channel.send(embed);
             break;
+
             case 'goose':
                 var imgs = ["https://media.mnn.com/assets/images/2018/04/HissingCanadaGoose.jpg.600x315_q80_crop-smart.jpg",
                             "https://cdn.vox-cdn.com/thumbor/2o-DDN0i7YmpkuvHTfgHzIRgrMk=/0x19:660x459/1200x800/filters:focal(0x19:660x459)/cdn.vox-cdn.com/uploads/chorus_image/image/49742777/Screen_Shot_2016-05-31_at_5.06.18_PM.0.0.png",
@@ -111,6 +116,29 @@ bot.on('message', message => {
                 .setURL('https://uwaterloo.ca/secretariat/policies-procedures-guidelines/policy-71');
                 message.channel.send(embed);
             break;
+
+            case 'goosify':
+                var member = bot.users.get(message.mentions.users.first().id)
+                var guild = bot.guilds.first();
+
+                var embed = new RichEmbed()
+                .setDescription(`${user} has been goosified!`);
+
+                guild.member(member).setNickname('Mr.Goose');
+                message.channel.send(embed);
+            break;
+
+            /*case 'test':
+                var member = bot.users.get(message.mentions.users.first().id)
+
+                //console.log(member);
+                //console.log(message.author);
+                //console.log(user);
+                guild = bot.guilds.first();
+                console.log(guild.member(member));
+                //console.log(guild);
+                //guild.member(member);
+            break;*/
         }
     }
 });

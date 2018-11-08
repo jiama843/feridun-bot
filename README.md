@@ -11,6 +11,7 @@ Useful discord bot
 - !chant -> Prints a random chant from a faculty
 - !salary -> Prints Feridun's salary
 - !academicintegrity -> Posts a link to policy 71
+- !goosify @user -> goosifies a user
 
 # Setup (Need token)
 
