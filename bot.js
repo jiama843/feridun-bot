@@ -123,9 +123,9 @@ bot.on('message', message => {
 
                 var embed = new RichEmbed()
                 .setDescription(`${user} has been goosified!`);
+                message.channel.send(embed);
 
                 guild.member(member).setNickname('Mr.Goose');
-                message.channel.send(embed);
             break;
 
             /*case 'test':
