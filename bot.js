@@ -186,7 +186,11 @@ bot.on('message', message => {
 //      }
 // });
 
-bot.login(auth.token);
+// For local testing
+//bot.login(auth.token);
+
+// For deployment
+bot.login(process.env.token);
 
 /*bot.on('message', message => {
     var prefix = '!'
