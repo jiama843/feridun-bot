@@ -16,7 +16,7 @@ Useful discord bot
 # Setup (Need token)
 
 Invite to your server:
-https://discordapp.com/api/oauth2/authorize?client_id=344711954071289857&permissions=0&redirect_uri=https%3A%2F%2Fferidun-bot-app.com%2Fcallback&response_type=code&scope=email%20connections%20guilds%20bot%20messages.read
+https://discordapp.com/api/oauth2/authorize?client_id=344711954071289857&permissions=2080898161&redirect_uri=https%3A%2F%2Fferidun-bot-app.com%2Fcallback&response_type=code&scope=email%20connections%20guilds%20messages.read%20bot
 
 Locally:
 
