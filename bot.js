@@ -24,7 +24,6 @@ logger.level = 'debug';
 // Helpers
 
 
-
 var bot = new Discord.Client();
 
 bot.on('ready', function (evt) {
